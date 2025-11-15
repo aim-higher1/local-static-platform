@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Mini CMS Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+<div class="container">
+
+  <!-- Header -->
+<header>
+  <div class="container">
+    <img src="images/project-main.jpg" alt="Logo" class="header-logo">
+    <h1>My Mini CMS</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Projects</h2>
+    <p>Explore some of our team projects with images and descriptions.</p>
+  </section>
+
+  <!-- Project Cards -->
+  <section class="articles">
+
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-text">
+        <h3>Static Portfolio Website</h3>
+        <p>HTML & CSS multi-page website hosted on AWS S3 with responsive design.</p>
+        <button>Read More</button>
+      </div>
+      <div class="card-image">
+        <img src="images/article1.jpg" alt="Project 1">
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-text">
+        <h3>AWS S3 Hosting Setup</h3>
+        <p>Configured S3 bucket for static hosting and integrated domain externally.</p>
+        <button>Read More</button>
+      </div>
+      <div class="card-image">
+        <img src="images/article2.jpg" alt="Project 2">
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-text">
+        <h3>Terraform IaC Deployment</h3>
+        <p>Optional Infrastructure as Code to provision S3 buckets and automate deployment.</p>
+        <button>Read More</button>
+      </div>
+      <div class="card-image">
+        <img src="images/article3.jpg" alt="Project 3">
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> My Mini CMS</p>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Mini CMS Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+<header>
+  <div class="container">
+    <img src="images/project-main.jpg" alt="Logo" class="header-logo">
+    <h1>My Mini CMS</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Contact Me</h2>
+    <p>Have a question or want to collaborate? Fill out the form below!</p>
+  </section>
+
+  <!-- Contact Card -->
+  <section class="contact-card fade-up">
+    <h3>Get in Touch</h3>
+    <p>Send me a message and I’ll get back to you as soon as possible.</p>
+    <form class="contact-form" id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="formMessage"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> My Mini CMS</p>
+  </footer>
+
+</div>
+
+<script>
+  // Update year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Fade-up animation on scroll
+  const fadeElements = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  fadeElements.forEach(el => observer.observe(el));
+
+  // Simulated contact form response
+  const contactForm = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+
+  contactForm.addEventListener('submit', function(e){
+    e.preventDefault(); // prevent actual submit
+
+    // Show sending message
+    formMessage.textContent = "Sending message...";
+    formMessage.style.color = "#555";
+    formMessage.style.fontWeight = "bold";
+
+    // Simulate realistic response
+    setTimeout(() => {
+      formMessage.textContent = "Message sent successfully! I’ll get back to you soon.";
+      formMessage.style.color = "#4CAF50";
+    }, 1500);
+  });
+</script>
+
+</body>
+</html>

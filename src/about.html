@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Mini CMS Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+<header>
+  <div class="container">
+    <img src="images/project-main.jpg" alt="Logo" class="header-logo">
+    <h1>My Mini CMS</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>About Me</h2>
+    <p>Learn more about me, my bootcamp journey, and my skills.</p>
+  </section>
+
+  <!-- Main About Card -->
+  <section class="project-card">
+    <h3>Who I Am</h3>
+    <p>
+      I am [Your Name], a dedicated Cloud Engineering student. During the bootcamp, I have focused on mastering Python, HTML/CSS, AWS services like S3, and Terraform for Infrastructure as Code. I enjoy creating clean, functional web solutions and learning how to deploy and automate cloud projects.
+    </p>
+    <img src="images/about-main.jpg" alt="About Me">
+    <a href="contact.html"><button>Contact Me</button></a>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> My Mini CMS</p>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
