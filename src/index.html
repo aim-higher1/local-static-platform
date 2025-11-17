@@ -81,10 +81,46 @@ Donec porttitor id felis vitae porta. Fusce pulvinar at ligula at semper. Maecen
     </div>
 
   </section>
+<!-- Footer -->
+<footer>
+  <p>
+    © <span id="year"></span> My Mini CMS <br>
+    <span id="location-footer">Detecting location...</span>
+  </p>
+</footer>
+
+<script>
+  // 1. Set the current year
+  document.getElementById("year").textContent = new Date().getFullYear();
+  
+  // 2. Detect location using ipapi.co
+  fetch("https://ipapi.co/json/")
+    .then(response => response.json())
+    .then(data => {
+      const city = data.city || "Unknown City";
+      const country = data.country_name || "Unknown Country";
+      document.getElementById("location-footer").textContent =
+        `You are browsing from ${city}, ${country}`;
+    })
+    .catch(() => {
+      document.getElementById("location-footer").textContent =
+        "Location unavailable";
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
 
   <!-- Footer -->
 <!-- Footer -->
-<footer>
+<!-- <footer>
   <p>
     © <span id="year"></span> My Mini CMS
     <br>
@@ -111,10 +147,10 @@ Donec porttitor id felis vitae porta. Fusce pulvinar at ligula at semper. Maecen
 </script>
 
 
-<footer>
+ <footer>
   <p>&copy; <span id="year"></span> My Portfolio</p>
-  <!-- <p id="location">Detecting location...</p> -->
-</footer>
+  <p id="location">Detecting location...</p> -->
+
 
 <!-- <script>
   // Set current year
@@ -131,6 +167,6 @@ Donec porttitor id felis vitae porta. Fusce pulvinar at ligula at semper. Maecen
       document.getElementById("location").textContent = "Location unavailable";
     });
 </script> -->
-</body>
+<!-- </body>
 </html>
-
+ -->

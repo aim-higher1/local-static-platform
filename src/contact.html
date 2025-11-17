@@ -46,48 +46,31 @@
     <div id="formMessage"></div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© <span id="year"></span> My Mini CMS</p>
-  </footer>
-
-</div>
+<!-- Footer -->
+<footer>
+  <p>
+    © <span id="year"></span> My Mini CMS <br>
+    <span id="location-footer">Detecting location...</span>
+  </p>
+</footer>
 
 <script>
-  // Update year in footer
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // 1. Set the current year
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Fade-up animation on scroll
-  const fadeElements = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target);
-      }
+  // 2. Detect location using ipapi.co
+  fetch("https://ipapi.co/json/")
+    .then(response => response.json())
+    .then(data => {
+      const city = data.city || "Unknown City";
+      const country = data.country_name || "Unknown Country";
+      document.getElementById("location-footer").textContent =
+        `You are browsing from ${city}, ${country}`;
+    })
+    .catch(() => {
+      document.getElementById("location-footer").textContent =
+        "Location unavailable";
     });
-  }, { threshold: 0.2 });
-  fadeElements.forEach(el => observer.observe(el));
-
-  // Simulated contact form response
-  const contactForm = document.getElementById('contactForm');
-  const formMessage = document.getElementById('formMessage');
-
-  contactForm.addEventListener('submit', function(e){
-    e.preventDefault(); // prevent actual submit
-
-    // Show sending message
-    formMessage.textContent = "Sending message...";
-    formMessage.style.color = "#555";
-    formMessage.style.fontWeight = "bold";
-
-    // Simulate realistic response
-    setTimeout(() => {
-      formMessage.textContent = "Message sent successfully! I’ll get back to you soon.";
-      formMessage.style.color = "#4CAF50";
-    }, 1500);
-  });
 </script>
-
 </body>
 </html>
