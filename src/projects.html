@@ -85,6 +85,7 @@
   // 1. Set the current year
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  
   // 2. Detect location using ipapi.co
   fetch("https://ipapi.co/json/")
     .then(response => response.json())
@@ -98,7 +99,7 @@
       document.getElementById("location-footer").textContent =
         "Location unavailable";
     });
-    
+
 </script>
 </body>
 </html>
