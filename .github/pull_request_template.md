@@ -1,9 +1,9 @@
-## 🔥 Summary  
+## Summary  
 Describe the purpose of this PR. What problem does it solve?
 
 ---
 
-## 📌 Changes  
+## Changes  
 List the key changes made in this PR:
 
 - Feature 1
@@ -13,7 +13,7 @@ List the key changes made in this PR:
 
 ---
 
-## 🧪 Testing  
+## Testing  
 Explain how you tested the changes:
 
 - Steps taken  
@@ -22,14 +22,14 @@ Explain how you tested the changes:
 
 ---
 
-## 📁 Related Issues  
+## Related Issues  
 Link any related issue numbers (if applicable):
 
 Closes #<issue_number>
 
 ---
 
-## 🚀 Checklist  
+## Checklist  
 Before submitting:  
 - [ ] Code follows project style  
 - [ ] No unnecessary files included  
